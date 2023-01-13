@@ -1,8 +1,11 @@
 import React from "react";
-import "./App.css";
 
 function App() {
-  return <>My resume!</>;
+  return (
+    <>
+      My resume!
+    </>
+  );
 }
 
 export default App;
