@@ -1,12 +1,16 @@
 import React from "react";
-import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Divider from "@mui/material/Divider";
 import { useTheme } from "@mui/material/styles";
 import { Heading } from "./heading";
+import { Body } from "./body";
 
 export function Resume() {
   const theme = useTheme();
   return (
-    <Box
+    <Grid
+      container
+      spacing={2}
       sx={{
         display: "flex",
         justifyContent: "center",
@@ -19,7 +23,21 @@ export function Resume() {
         fontFamily: "monospace",
       }}
     >
-      <Heading />
-    </Box>
+      {/* Heading should be on a line of its own with some padding on either side */}
+      <Grid item xs={2} />
+      <Grid item xs={8}>
+        <Heading />
+      </Grid>
+      <Grid item xs={2} />
+
+      <Grid item xs={12}>
+        <Divider />
+      </Grid>
+
+      {/* The body will take up the full width */}
+      <Grid item xs={12}>
+        <Body />
+      </Grid>
+    </Grid>
   );
 }
