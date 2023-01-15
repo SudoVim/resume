@@ -2,25 +2,35 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material/styles";
+import { Link } from "react-router-dom";
 
 type Props = {
   title: string;
+  href: string;
   children: React.ReactNode;
 };
 
-export function Item({ title, children }: Props) {
+export function Item({ title, href, children }: Props) {
   const theme = useTheme();
   return (
     <>
       <Grid item xs={2}>
-        <Typography
-          variant="h5"
-          sx={{
-            fontFamily: "monospace",
+        <Link
+          to={href}
+          style={{
+            textDecoration: "none",
+            color: theme.palette.text.primary,
           }}
         >
-          {title}
-        </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              fontFamily: "monospace",
+            }}
+          >
+            {title}
+          </Typography>
+        </Link>
       </Grid>
       <Grid
         item

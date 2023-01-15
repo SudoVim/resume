@@ -1,9 +1,9 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
-import { Resume } from "components/resume";
+import { Outlet } from "react-router-dom";
 
-function App() {
+export function App() {
   const theme = useTheme();
   return (
     <Box
@@ -14,9 +14,19 @@ function App() {
         background: theme.palette.background.default,
       }}
     >
-      <Resume />
+      <Box
+        sx={{
+          background: theme.palette.background.paper,
+          margin: 2,
+          padding: 2,
+          border: `1px solid ${theme.palette.text.secondary}`,
+          borderRadius: 2,
+          fontFamily: "monospace",
+          width: "1200px",
+        }}
+      >
+        <Outlet />
+      </Box>
     </Box>
   );
 }
-
-export default App;
