@@ -12,9 +12,9 @@ export function Item({ title, children }: Props) {
   const theme = useTheme();
   return (
     <>
-      <Grid item xs={1}>
+      <Grid item xs={2}>
         <Typography
-          variant="h4"
+          variant="h5"
           sx={{
             fontFamily: "monospace",
           }}
@@ -22,7 +22,6 @@ export function Item({ title, children }: Props) {
           {title}
         </Typography>
       </Grid>
-      <Grid item xs={1} />
       <Grid
         item
         xs={10}

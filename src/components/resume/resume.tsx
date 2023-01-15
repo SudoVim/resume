@@ -21,6 +21,7 @@ export function Resume() {
         border: `1px solid ${theme.palette.text.secondary}`,
         borderRadius: 2,
         fontFamily: "monospace",
+        maxWidth: "1200px",
       }}
     >
       {/* Heading should be on a line of its own with some padding on either side */}
