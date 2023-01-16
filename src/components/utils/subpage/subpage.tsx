@@ -10,7 +10,7 @@ export type Breadcrumb = {
   to?: string;
 };
 
-type Props = {
+export type Props = {
   title: string;
   breadcrumbs: Breadcrumb[];
   children: React.ReactNode;

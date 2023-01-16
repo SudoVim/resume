@@ -1,10 +1,10 @@
 import React from "react";
-import { Subpage } from "components/utils/subpage";
+import { EssaySubpage } from "components/utils/subpage";
 import { Summary } from "./summary";
 
 export function SummarySubpage() {
   return (
-    <Subpage
+    <EssaySubpage
       title="Summary"
       breadcrumbs={[
         {
@@ -17,6 +17,6 @@ export function SummarySubpage() {
       ]}
     >
       <Summary />
-    </Subpage>
+    </EssaySubpage>
   );
 }

@@ -44,11 +44,12 @@ was developing experimental React apps to compare errors from failure reports
 across hundreds of systems.
 
 It wasn't until I was working at PullRequest that I had started transitioning
-away from JavaScript toward Typescript. While TypeScript is strongly typed,
+away from JavaScript toward TypeScript. While TypeScript is strongly typed,
 which is a huge benefit from the typical interpreted programming language, you
 definitely start hitting the drawback of the rigid type definitions.
 
-However, it's a huge step in the right direction for web applications.
+However, it's a huge step in the right direction for web applications, and it's
+a necessecity when leveraging the powerful frameworks in the React family.
 `;
 
 export const languages = [

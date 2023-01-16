@@ -1,8 +1,8 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import { Item } from "./item";
-import { Summary } from "./summary";
-import { Skills } from "./skills";
+import { Summary } from "components/summary";
+import { Skills } from "components/skills";
 import Divider from "@mui/material/Divider";
 
 export function Body() {

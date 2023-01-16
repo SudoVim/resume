@@ -1,8 +1,9 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import { App } from "./App";
 import { Resume } from "components/resume";
-import { SummarySubpage } from "components/resume/body/summary";
-import { SkillsSubpage, Skill } from "components/resume/body/skills";
+import { SummarySubpage } from "components/summary";
+import { SkillsSubpage } from "components/skills";
+import { SkillSubpage } from "components/skills/skill";
 
 export const router = createBrowserRouter([
   {
@@ -27,7 +28,7 @@ export const router = createBrowserRouter([
           },
           {
             path: ":skillKey",
-            element: <Skill />,
+            element: <SkillSubpage />,
           },
         ],
       },
