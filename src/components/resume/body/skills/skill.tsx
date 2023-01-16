@@ -1,20 +1,51 @@
 import React from "react";
-import { Skill as SkillType } from "features/skills/skill";
-import Grid from "@mui/material/Grid";
+import { useSelector } from "react-redux";
+import { Subpage } from "components/utils/subpage";
+import { useParams } from "react-router-dom";
+import { selectors } from "features";
 import Typography from "@mui/material/Typography";
 
-type Props = {
-  skill: SkillType;
-};
+export function Skill() {
+  const params = useParams();
+  const skillsByKey = useSelector(selectors.skills.skillsByKey);
 
-export function Skill({ skill }: Props) {
+  const { skillKey } = params;
+  if (!skillKey) {
+    return null;
+  }
+
+  const skill = skillsByKey[skillKey];
   return (
-    <Grid item xs={4}>
-      <ul>
-        <li>
-          <Typography variant="body1">{skill.name}</Typography>
-        </li>
-      </ul>
-    </Grid>
+    <Subpage
+      title={skill.name}
+      breadcrumbs={[
+        {
+          name: "Resume",
+          to: "/",
+        },
+        {
+          name: "Skills",
+          to: "/skills",
+        },
+        {
+          name: skill.name,
+        },
+      ]}
+    >
+      {skill.description.split("\n\n").map((paragraph, i) => (
+        <>
+          {i !== 0 ? <br /> : null}
+          <Typography
+            key={i}
+            variant="body1"
+            sx={{
+              fontFamily: "monospace",
+            }}
+          >
+            {paragraph}
+          </Typography>
+        </>
+      ))}
+    </Subpage>
   );
 }

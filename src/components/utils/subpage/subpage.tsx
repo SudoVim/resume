@@ -24,7 +24,13 @@ export function Subpage({ title, breadcrumbs, children }: Props) {
         {breadcrumbs.map(({ name, to }) => {
           if (!to) {
             return (
-              <Typography variant="body1" key={name}>
+              <Typography
+                variant="body1"
+                key={name}
+                sx={{
+                  fontFamily: "monospace",
+                }}
+              >
                 {name}
               </Typography>
             );
@@ -38,6 +44,7 @@ export function Subpage({ title, breadcrumbs, children }: Props) {
                 color: theme.palette.text.primary,
                 cursor: "pointer",
                 paddingLeft: 2,
+                fontFamily: "monospace",
               }}
             >
               {name}
@@ -45,7 +52,7 @@ export function Subpage({ title, breadcrumbs, children }: Props) {
           );
         })}
       </Breadcrumbs>
-      <Typography variant="h4" sx={{ pt: 1 }}>
+      <Typography variant="h4" sx={{ pt: 1, fontFamily: "monospace" }}>
         {title}
       </Typography>
       <Box sx={{ pt: 2 }}>{children}</Box>

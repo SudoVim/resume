@@ -1,8 +1,8 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Outlet } from "react-router-dom";
 import { App } from "./App";
 import { Resume } from "components/resume";
 import { SummarySubpage } from "components/resume/body/summary";
-import { SkillsSubpage } from "components/resume/body/skills";
+import { SkillsSubpage, Skill } from "components/resume/body/skills";
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +19,17 @@ export const router = createBrowserRouter([
       },
       {
         path: "skills",
-        element: <SkillsSubpage />,
+        element: <Outlet />,
+        children: [
+          {
+            index: true,
+            element: <SkillsSubpage />,
+          },
+          {
+            path: ":skillKey",
+            element: <Skill />,
+          },
+        ],
       },
     ],
   },
