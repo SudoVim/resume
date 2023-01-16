@@ -1,8 +1,10 @@
 import React from "react";
-import { Grid, Divider } from "@mui/material";
+import { Grid } from "@mui/material";
 import { Item } from "./item";
 import { Summary } from "components/summary";
 import { Skills } from "components/skills";
+import { Experience } from "components/experience";
+import { Divider } from "./divider";
 
 export function Body() {
   return (
@@ -10,11 +12,17 @@ export function Body() {
       <Item title="Summary" href="/summary">
         <Summary />
       </Item>
-      <Grid item xs={12}>
-        <Divider />
-      </Grid>
+
+      <Divider />
+
       <Item title="Skills" href="/skills">
         <Skills />
+      </Item>
+
+      <Divider />
+
+      <Item title="Experience" href="/experience">
+        <Experience />
       </Item>
     </Grid>
   );
