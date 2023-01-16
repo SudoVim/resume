@@ -38,7 +38,6 @@ export function Item({ title, href, children }: Props) {
         sx={{
           display: "flex",
           alignItems: "center",
-          borderBottom: `1px dashed ${theme.palette.text.secondary}`,
         }}
       >
         {children}
