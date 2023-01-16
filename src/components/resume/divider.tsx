@@ -1,6 +1,5 @@
 import React from "react";
-import Grid from "@mui/material/Grid";
-import MUIDivider from "@mui/material/Divider";
+import { Grid, Divider as MUIDivider } from "@mui/material";
 
 export function Divider() {
   return (

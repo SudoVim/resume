@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useTheme } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
-import Breadcrumbs from "@mui/material/Breadcrumbs";
-import Box from "@mui/material/Box";
+import { useTheme, Typography, Breadcrumbs, Box } from "@mui/material";
 
 export type Breadcrumb = {
   name: string;

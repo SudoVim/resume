@@ -1,6 +1,5 @@
 import React from "react";
-import { Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { Typography, useTheme } from "@mui/material";
 
 export function Summary() {
   const theme = useTheme();

@@ -1,6 +1,5 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import { useTheme } from "@mui/material/styles";
+import { Box, useTheme } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
 export function App() {

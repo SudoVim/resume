@@ -1,8 +1,6 @@
 import React from "react";
 import { skills } from "features/skills";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import { Grid, Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 

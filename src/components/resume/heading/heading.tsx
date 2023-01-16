@@ -1,7 +1,5 @@
 import React from "react";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
+import { Grid, Typography, Link } from "@mui/material";
 import { Item } from "./item";
 
 export function Heading() {

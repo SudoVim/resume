@@ -1,6 +1,5 @@
 import React from "react";
-import Grid from "@mui/material/Grid";
-import { useTheme } from "@mui/material/styles";
+import { Grid, useTheme } from "@mui/material";
 
 export function Item({ children }: { children: React.ReactNode }) {
   const theme = useTheme();
