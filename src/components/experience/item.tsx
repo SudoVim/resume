@@ -1,33 +1,35 @@
 import React from "react";
-import { Grid, Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
+import { Experience } from "features/experience/types";
+import { Column } from "components/utils";
+import { Role } from "./role";
 
 type Props = {
-  company: string;
-  tenure: string;
-  children: React.ReactNode;
+  experience: Experience;
 };
 
-export function Item({ company, tenure, children }: Props) {
+export function Item({ experience }: Props) {
+  const { company, tenure, description, roles } = experience;
   const theme = useTheme();
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12}>
-        <Box
+    <Column>
+      <Box
+        sx={{
+          display: "flex",
+          direction: "row",
+          borderBottom: `1px dashed ${theme.palette.text.secondary}`,
+        }}
+      >
+        <Typography
+          variant="body1"
           sx={{
-            display: "flex",
-            direction: "row",
-            borderBottom: `1px dashed ${theme.palette.text.secondary}`,
+            fontWeight: "bold",
+            fontFamily: "monospace",
           }}
         >
-          <Typography
-            variant="body1"
-            sx={{
-              fontWeight: "bold",
-              fontFamily: "monospace",
-            }}
-          >
-            {company}
-          </Typography>
+          {company}
+        </Typography>
+        {tenure ? (
           <Typography
             variant="body1"
             sx={{
@@ -37,11 +39,16 @@ export function Item({ company, tenure, children }: Props) {
           >
             ({tenure})
           </Typography>
-        </Box>
-      </Grid>
-      <Grid item xs={12}>
-        {children}
-      </Grid>
-    </Grid>
+        ) : null}
+      </Box>
+      {description ? (
+        <Typography variant="body1" sx={{ fontFamily: "monospace" }}>
+          {description}
+        </Typography>
+      ) : null}
+      {roles?.map((role, i) => (
+        <Role key={i} role={role} />
+      ))}
+    </Column>
   );
 }

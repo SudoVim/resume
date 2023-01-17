@@ -22,7 +22,14 @@ export function Skills() {
                 color: theme.palette.text.primary,
               }}
             >
-              <Typography variant="body1">{skill.name}</Typography>
+              <Typography
+                variant="body1"
+                style={{
+                  fontFamily: "monospace",
+                }}
+              >
+                {skill.name}
+              </Typography>
             </Link>
           </Box>
         </Grid>

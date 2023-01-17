@@ -1,9 +1,9 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Essay } from "components/utils";
 
 export function Summary() {
   return (
-    <Typography variant="body1" fontFamily="monospace">
+    <Essay>
       In my twelve-year career as a software engineer, I have consistently taken
       requirements, no matter how vague, and turned them into well-designed,
       well-implemented, and well-maintained products. I have taken on all
@@ -11,6 +11,6 @@ export function Summary() {
       assurance, devops, and good old-fashioned programming to a technical lead
       that not only understands the responsibility of those on my team but can
       take over for them at a moment's notice.
-    </Typography>
+    </Essay>
   );
 }

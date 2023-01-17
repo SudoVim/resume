@@ -1,13 +1,14 @@
 import React from "react";
-import { Grid } from "@mui/material";
-import { IBMFlashSystems } from "./ibm_flashsystems";
+import { experience } from "features/experience";
+import { Item } from "./item";
+import { Column } from "components/utils";
 
 export function Experience() {
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12}>
-        <IBMFlashSystems />
-      </Grid>
-    </Grid>
+    <Column>
+      {experience.map((exp) => (
+        <Item key={exp.key} experience={exp} />
+      ))}
+    </Column>
   );
 }

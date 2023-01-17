@@ -1,14 +1,17 @@
 import React from "react";
+import { Essay } from "components/utils";
 
 type Props = {
-  children: React.ReactNode[];
+  responsibilities: string[];
 };
 
-export function Responsibilities({ children }: Props) {
+export function Responsibilities({ responsibilities }: Props) {
   return (
     <ul>
-      {children.map((child, i) => (
-        <li key={i}>{child}</li>
+      {responsibilities.map((responsibility, i) => (
+        <li key={i}>
+          <Essay>{responsibility}</Essay>
+        </li>
       ))}
     </ul>
   );
