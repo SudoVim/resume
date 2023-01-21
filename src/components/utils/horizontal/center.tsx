@@ -18,3 +18,5 @@ export function HorizontalCenter({ children }: Props) {
     </Box>
   );
 }
+
+export const HC = HorizontalCenter;

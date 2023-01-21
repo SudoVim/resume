@@ -9,3 +9,5 @@ type Props = {
 export function HorizontalWidth({ width, children }: Props) {
   return <Box sx={{ width }}>{children}</Box>;
 }
+
+export const HW = HorizontalWidth;

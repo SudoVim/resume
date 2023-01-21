@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectors, actions } from "features";
-import { HorizontalCenter, HorizontalWidth, Column } from "components/utils";
+import { HC, HW, Column } from "components/utils";
 import { Row } from "./row";
 
 export function Mastermind() {
@@ -22,12 +22,12 @@ export function Mastermind() {
   }
 
   return (
-    <HorizontalCenter>
-      <HorizontalWidth width="250px">
-        <HorizontalCenter>
+    <HC>
+      <HW width="300px">
+        <HC>
           <Column spacing="2px">{rows}</Column>
-        </HorizontalCenter>
-      </HorizontalWidth>
-    </HorizontalCenter>
+        </HC>
+      </HW>
+    </HC>
   );
 }
