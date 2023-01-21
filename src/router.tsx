@@ -5,6 +5,7 @@ import { SummarySubpage } from "components/summary";
 import { SkillsSubpage } from "components/skills";
 import { SkillSubpage } from "components/skills/skill";
 import { ExperienceListSubpage } from "components/experience";
+import { ExperienceSubpage } from "components/experience/experience";
 
 export const router = createBrowserRouter([
   {
@@ -35,7 +36,17 @@ export const router = createBrowserRouter([
       },
       {
         path: "experience",
-        element: <ExperienceListSubpage />,
+        element: <Outlet />,
+        children: [
+          {
+            index: true,
+            element: <ExperienceListSubpage />,
+          },
+          {
+            path: ":experienceKey",
+            element: <ExperienceSubpage />,
+          },
+        ],
       },
     ],
   },

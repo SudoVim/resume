@@ -1,19 +1,13 @@
 import React from "react";
-import { Box } from "@mui/material";
 import { Subpage } from "components/utils/subpage";
 import { Props } from "./subpage";
+import { HorizontalCenter, HorizontalWidth } from "../horizontal";
 
 export function EssaySubpage(props: Props) {
   const children = (
-    <Box
-      sx={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <Box sx={{ width: "600px" }}>{props.children}</Box>
-    </Box>
+    <HorizontalCenter>
+      <HorizontalWidth width="600px">{props.children}</HorizontalWidth>
+    </HorizontalCenter>
   );
   return <Subpage {...props}>{children}</Subpage>;
 }
