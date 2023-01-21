@@ -1,2 +1,2 @@
-export { Experience } from "./experience";
-export { ExperienceSubpage } from "./subpage";
+export { ExperienceListSubpage } from "./subpage";
+export { ExperienceList } from "./list";

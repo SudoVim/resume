@@ -3,7 +3,7 @@ import { experience } from "features/experience";
 import { Item } from "./item";
 import { Column } from "components/utils";
 
-export function Experience() {
+export function ExperienceList() {
   return (
     <Column>
       {experience.map((exp) => (

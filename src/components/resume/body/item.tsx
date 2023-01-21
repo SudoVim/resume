@@ -22,9 +22,10 @@ export function Item({ title, href, children }: Props) {
           }}
         >
           <Typography
-            variant="h5"
+            variant="body1"
             sx={{
               fontFamily: "monospace",
+              fontSize: 18,
             }}
           >
             {title}

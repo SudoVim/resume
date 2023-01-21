@@ -1,8 +1,8 @@
 import React from "react";
 import { Subpage } from "components/utils/subpage";
-import { Experience } from "./experience";
+import { ExperienceList } from "./list";
 
-export function ExperienceSubpage() {
+export function ExperienceListSubpage() {
   return (
     <Subpage
       title="Experience"
@@ -16,7 +16,7 @@ export function ExperienceSubpage() {
         },
       ]}
     >
-      <Experience />
+      <ExperienceList />
     </Subpage>
   );
 }

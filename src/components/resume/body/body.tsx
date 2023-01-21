@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 import { Item } from "./item";
 import { Summary } from "components/summary";
 import { Skills } from "components/skills";
-import { Experience } from "components/experience";
+import { ExperienceList } from "components/experience";
 import { Divider } from "./divider";
 
 export function Body() {
@@ -22,7 +22,7 @@ export function Body() {
       <Divider />
 
       <Item title="Experience" href="/experience">
-        <Experience />
+        <ExperienceList />
       </Item>
     </Grid>
   );
