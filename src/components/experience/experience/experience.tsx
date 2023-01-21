@@ -1,14 +1,22 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Box, Typography, useTheme } from "@mui/material";
-import { Experience } from "features/experience/types";
 import { Column } from "components/utils";
 import { Role } from "./role";
+import { selectors } from "features";
 
 type Props = {
-  experience: Experience;
+  experienceKey: string;
 };
 
-export function Item({ experience }: Props) {
+export function Experience({ experienceKey }: Props) {
+  const experience = useSelector(selectors.experience.experienceByKey)[
+    experienceKey
+  ];
+  if (!experience) {
+    return null;
+  }
+
   const { company, tenure, description, roles } = experience;
   const theme = useTheme();
   return (
