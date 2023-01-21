@@ -1,5 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { MastermindBoard, MastermindLine, MastermindTry } from "./types";
+import {
+  MastermindBoard,
+  MastermindLine,
+  MastermindTry,
+  MastermindTile,
+} from "./types";
 import random from "random";
 
 const DEFAULT_NUM_TILE_TYPES = 4;
@@ -13,6 +18,7 @@ export type MastermindState = {
   lineWidth: number;
   numTries: number;
   board?: MastermindBoard;
+  currentPlay: MastermindTile[];
   finished: boolean;
   success: boolean;
 };
@@ -21,6 +27,7 @@ export const initialState: MastermindState = {
   numTileTypes: DEFAULT_NUM_TILE_TYPES,
   lineWidth: DEFAULT_LINE_WIDTH,
   numTries: DEFAULT_NUM_TRIES,
+  currentPlay: [],
   finished: false,
   success: false,
 };
@@ -85,9 +92,27 @@ export const mastermindSlice = createSlice({
       };
       state.finished = false;
       state.success = false;
+      state.currentPlay = [];
     },
-    playLine: (state, action: PayloadAction<MastermindLine>) => {
-      const line = action.payload;
+    playTile: (state, action: PayloadAction<MastermindTile>) => {
+      const tile = action.payload;
+      const { board, currentPlay, lineWidth } = state;
+      if (!board || currentPlay.length >= lineWidth) {
+        return;
+      }
+
+      currentPlay.push(tile);
+    },
+    backPlayTile: (state) => {
+      const { board, currentPlay } = state;
+      if (!board || currentPlay.length === 0) {
+        return;
+      }
+
+      currentPlay.pop();
+    },
+    playLine: (state) => {
+      const line = state.currentPlay;
       if (!state.board || line.length !== state.lineWidth) {
         return;
       }
@@ -100,6 +125,7 @@ export const mastermindSlice = createSlice({
 
       const userTry = generateTry(state.board, line);
       state.board.board.push(userTry);
+      state.currentPlay = [];
       if (userTry.numCorrect === state.lineWidth) {
         state.finished = true;
         state.success = true;

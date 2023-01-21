@@ -13,6 +13,7 @@ describe("exercise the store mechanism", () => {
       answer: [0, 1, 2, 3],
       board: [],
     },
+    currentPlay: [],
     finished: false,
     lineWidth: 4,
     numTileTypes: 4,
@@ -47,74 +48,133 @@ describe("exercise the store mechanism", () => {
       initialized
     );
   });
+  it("does not play a tile when not initialized", () => {
+    const state = initialState;
+    expect(store(state, mastermindSlice.actions.playTile(0))).toEqual(state);
+  });
+  it("plays the first tile", () => {
+    const state = initialized;
+    expect(store(state, mastermindSlice.actions.playTile(0))).toEqual({
+      ...state,
+      currentPlay: [0],
+    });
+  });
+  it("plays the second tile", () => {
+    const state = {
+      ...initialized,
+      currentPlay: [0],
+    };
+    expect(store(state, mastermindSlice.actions.playTile(1))).toEqual({
+      ...state,
+      currentPlay: [0, 1],
+    });
+  });
+  it("does not place a tile past the length", () => {
+    const state = {
+      ...initialized,
+      lineWidth: 1,
+      currentPlay: [0],
+    };
+    expect(store(state, mastermindSlice.actions.playTile(1))).toEqual(state);
+  });
+  it("does not back out a tile when not initialized", () => {
+    const state = initialState;
+    expect(store(state, mastermindSlice.actions.backPlayTile())).toEqual(state);
+  });
+  it("backs out a tile", () => {
+    const state = {
+      ...initialized,
+      currentPlay: [0, 1, 2],
+    };
+    expect(store(state, mastermindSlice.actions.backPlayTile())).toEqual({
+      ...initialized,
+      currentPlay: [0, 1],
+    });
+  });
   it("ignores a line if the game board is not initialized", () => {
     const state = initialState;
     const line = [3, 2, 1, 0];
     expect(store(state, mastermindSlice.actions.playLine(line))).toEqual(state);
   });
   it("ignores a line if the correct number of tiles is not given", () => {
-    const state = initialized;
-    const line = [3, 2, 1];
-    expect(store(state, mastermindSlice.actions.playLine(line))).toEqual(state);
+    const currentPlay = [3, 2, 1];
+    const state = {
+      ...initialized,
+      currentPlay,
+    };
+    expect(store(state, mastermindSlice.actions.playLine())).toEqual(state);
   });
   it("ignores a line if an invalid tile is given", () => {
-    const state = initialized;
-    const line = [3, 2, 1, 8];
-    expect(store(state, mastermindSlice.actions.playLine(line))).toEqual(state);
+    const currentPlay = [3, 2, 1, 8];
+    const state = {
+      ...initialized,
+      currentPlay,
+    };
+    expect(store(state, mastermindSlice.actions.playLine())).toEqual(state);
   });
   it("plays a line that does not end the game", () => {
-    const state = initialized;
-    const line = [3, 2, 1, 0];
-    expect(store(state, mastermindSlice.actions.playLine(line))).toEqual({
+    const currentPlay = [3, 2, 1, 0];
+    const state = {
+      ...initialized,
+      currentPlay,
+    };
+    expect(store(state, mastermindSlice.actions.playLine())).toEqual({
       ...state,
       board: {
         ...state.board,
         board: [
           {
-            line,
+            line: currentPlay,
             numClose: 4,
             numCorrect: 0,
           },
         ],
       },
+      currentPlay: [],
     });
   });
   it("plays a line that ends the game unsuccessfully", () => {
+    const currentPlay = [3, 2, 1, 0];
     const state = {
       ...initialized,
       numTries: 1,
+      currentPlay,
     };
-    const line = [3, 2, 1, 0];
-    expect(store(state, mastermindSlice.actions.playLine(line))).toEqual({
+    expect(store(state, mastermindSlice.actions.playLine())).toEqual({
       ...state,
       board: {
         ...state.board,
         board: [
           {
-            line,
+            line: currentPlay,
             numClose: 4,
             numCorrect: 0,
           },
         ],
       },
+      currentPlay: [],
       finished: true,
     });
   });
   it("plays a line that ends the game successfully", () => {
-    const state = initialized;
-    const line = [0, 1, 2, 3];
-    expect(store(state, mastermindSlice.actions.playLine(line))).toEqual({
+    const currentPlay = [0, 1, 2, 3];
+    const state = {
+      ...initialized,
+      currentPlay,
+    };
+    expect(store(state, mastermindSlice.actions.playLine())).toEqual({
       ...state,
       board: {
         ...state.board,
         board: [
           {
-            line,
+            line: currentPlay,
             numClose: 0,
             numCorrect: 4,
           },
         ],
       },
+      currentPlay: [],
       finished: true,
       success: true,
     });
