@@ -6,6 +6,7 @@ import { SkillsSubpage } from "components/skills";
 import { SkillSubpage } from "components/skills/skill";
 import { ExperienceListSubpage } from "components/experience";
 import { ExperienceSubpage } from "components/experience/experience";
+import { Mastermind } from "components/mastermind/mastermind";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
             element: <ExperienceSubpage />,
           },
         ],
+      },
+      {
+        path: "mastermind",
+        element: <Mastermind />,
       },
     ],
   },

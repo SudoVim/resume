@@ -8,7 +8,7 @@ const DEFAULT_LINE_WIDTH = 4;
 
 const DEFAULT_NUM_TRIES = 12;
 
-type MastermindState = {
+export type MastermindState = {
   numTileTypes: number;
   lineWidth: number;
   numTries: number;
