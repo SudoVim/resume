@@ -1,0 +1,117 @@
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { MastermindBoard, MastermindLine, MastermindTry } from "./types";
+import random from "random";
+
+const DEFAULT_NUM_TILE_TYPES = 4;
+
+const DEFAULT_LINE_WIDTH = 4;
+
+const DEFAULT_NUM_TRIES = 12;
+
+type MastermindState = {
+  numTileTypes: number;
+  lineWidth: number;
+  numTries: number;
+  board?: MastermindBoard;
+  finished: boolean;
+  success: boolean;
+};
+
+export const initialState: MastermindState = {
+  numTileTypes: DEFAULT_NUM_TILE_TYPES,
+  lineWidth: DEFAULT_LINE_WIDTH,
+  numTries: DEFAULT_NUM_TRIES,
+  finished: false,
+  success: false,
+};
+
+export function generateTry(
+  board: MastermindBoard,
+  line: MastermindLine
+): MastermindTry {
+  const { answer } = board;
+  let numCorrect = 0;
+  let numClose = 0;
+
+  // Determine which tiles are "correct" before determining which tiles are
+  // "close". If an "answer" is already determined to be "correct" or "close",
+  // it can not be determined to be the same for another tile.
+  const assignedTile: Record<number, boolean> = {};
+  const assignedAnswer: Record<number, boolean> = {};
+  for (const i in line) {
+    if (line[i] === answer[i]) {
+      assignedTile[i] = true;
+      assignedAnswer[i] = true;
+      numCorrect++;
+      continue;
+    }
+  }
+
+  for (const i in line) {
+    if (assignedTile[i]) {
+      continue;
+    }
+
+    for (const j in answer) {
+      if (i === j || assignedAnswer[j]) {
+        continue;
+      }
+
+      if (line[i] === answer[j]) {
+        assignedTile[i] = true;
+        assignedAnswer[j] = true;
+        numClose++;
+        continue;
+      }
+    }
+  }
+
+  return { line, numCorrect, numClose };
+}
+
+export const mastermindSlice = createSlice({
+  name: "mastermind",
+  initialState,
+  reducers: {
+    initialize: (state) => {
+      const answer: MastermindLine = [];
+      for (let i = 0; i < state.lineWidth; i++) {
+        answer.push(random.int(0, state.numTileTypes - 1));
+      }
+
+      state.board = {
+        answer,
+        board: [],
+      };
+      state.finished = false;
+      state.success = false;
+    },
+    playLine: (state, action: PayloadAction<MastermindLine>) => {
+      const line = action.payload;
+      if (!state.board || line.length !== state.lineWidth) {
+        return;
+      }
+
+      for (const tile of line) {
+        if (tile < 0 || tile >= state.numTileTypes) {
+          return;
+        }
+      }
+
+      const userTry = generateTry(state.board, line);
+      state.board.board.push(userTry);
+      if (userTry.numCorrect === state.lineWidth) {
+        state.finished = true;
+        state.success = true;
+        return;
+      }
+
+      if (state.board.board.length >= state.numTries) {
+        state.finished = true;
+        state.success = false;
+      }
+    },
+  },
+});
+
+export const store = mastermindSlice.reducer;
