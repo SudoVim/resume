@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectors, actions } from "features";
 import { HC, HW, Column } from "components/utils";
-import { Row } from "./row";
+import { Row } from "./rows";
 
 export function Mastermind() {
   const dispatch = useDispatch();
