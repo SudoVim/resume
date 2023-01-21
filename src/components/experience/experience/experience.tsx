@@ -10,6 +10,7 @@ type Props = {
 };
 
 export function Experience({ experienceKey }: Props) {
+  const theme = useTheme();
   const experience = useSelector(selectors.experience.experienceByKey)[
     experienceKey
   ];
@@ -18,7 +19,6 @@ export function Experience({ experienceKey }: Props) {
   }
 
   const { company, tenure, description, roles } = experience;
-  const theme = useTheme();
   return (
     <Column>
       <Box
