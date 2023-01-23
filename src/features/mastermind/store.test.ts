@@ -52,6 +52,13 @@ describe("exercise the store mechanism", () => {
     const state = initialState;
     expect(store(state, mastermindSlice.actions.playTile(0))).toEqual(state);
   });
+  it("does not play a tile when finished", () => {
+    const state = {
+      ...initialized,
+      finished: true,
+    };
+    expect(store(state, mastermindSlice.actions.playTile(0))).toEqual(state);
+  });
   it("plays the first tile", () => {
     const state = initialized;
     expect(store(state, mastermindSlice.actions.playTile(0))).toEqual({

@@ -1,12 +1,5 @@
 export const COLORS = {
   correct: "#d32f2f",
-  close: "#fff",
-  tiles: [
-    "#f44336",
-    "#ff9800",
-    "#2196f3",
-    "#4caf50",
-    "rgba(0, 0, 0, 0.54)",
-    "rgb(95, 95, 96)",
-  ],
+  close: "#f9d29d",
+  tiles: ["#2196f3", "#2df321", "#a821f3", "#0a3d49"],
 };

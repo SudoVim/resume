@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { TileButton } from "./tile";
 import { BlankButton } from "./blank";
+import { BackButton } from "./back";
+import { PlayButton } from "./play";
 import { selectors } from "features";
 
 type Props = {
@@ -15,6 +17,14 @@ export function RowButton({ index }: Props) {
   const diffFromEnd = numTries - index - 1;
   if (diffFromEnd < numTileTypes) {
     return <TileButton index={diffFromEnd} />;
+  }
+
+  if (diffFromEnd === numTileTypes) {
+    return <BackButton />;
+  }
+
+  if (diffFromEnd === numTileTypes + 1) {
+    return <PlayButton />;
   }
 
   return <BlankButton />;

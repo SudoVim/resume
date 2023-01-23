@@ -87,8 +87,8 @@ export const mastermindSlice = createSlice({
     },
     playTile: (state, action: PayloadAction<MastermindTile>) => {
       const tile = action.payload;
-      const { board, currentPlay, lineWidth } = state;
-      if (!board || currentPlay.length >= lineWidth) {
+      const { board, currentPlay, lineWidth, finished } = state;
+      if (finished || !board || currentPlay.length >= lineWidth) {
         return;
       }
 
