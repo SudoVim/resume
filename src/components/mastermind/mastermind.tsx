@@ -23,7 +23,7 @@ export function Mastermind() {
 
   return (
     <HC>
-      <HW width="300px">
+      <HW width="400px">
         <HC>
           <Column spacing="2px">{rows}</Column>
         </HC>

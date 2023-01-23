@@ -4,6 +4,7 @@ import {
   MastermindLine,
   MastermindTry,
   MastermindTile,
+  MastermindState,
 } from "./types";
 import random from "random";
 
@@ -12,16 +13,6 @@ const DEFAULT_NUM_TILE_TYPES = 4;
 const DEFAULT_LINE_WIDTH = 4;
 
 const DEFAULT_NUM_TRIES = 12;
-
-export type MastermindState = {
-  numTileTypes: number;
-  lineWidth: number;
-  numTries: number;
-  board?: MastermindBoard;
-  currentPlay: MastermindTile[];
-  finished: boolean;
-  success: boolean;
-};
 
 export const initialState: MastermindState = {
   numTileTypes: DEFAULT_NUM_TILE_TYPES,

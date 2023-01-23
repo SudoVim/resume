@@ -1,6 +1,6 @@
 import React from "react";
 import { useTheme, Grid } from "@mui/material";
-import { COLORS } from "./utils";
+import { COLORS } from "../common";
 
 type Props = {
   type: "empty" | "correct" | "close";

@@ -1,5 +1,4 @@
-import { MastermindState } from "./store";
-import { MastermindBoard, MastermindTry } from "./types";
+import { MastermindState, MastermindBoard, MastermindTry } from "./types";
 
 function selectMastermind(state: any): MastermindState {
   return state.mastermind;
