@@ -1,24 +1,24 @@
 import React from "react";
-import { HC, HW, Subpage } from "components/utils";
-import { ExperienceList } from "./list";
+import { Subpage, HC, HW } from "components/utils";
+import { Education } from "./education";
 
-export function ExperienceListSubpage() {
+export function EducationSubpage() {
   return (
     <Subpage
-      title="Experience"
+      title="Education"
       breadcrumbs={[
         {
           name: "Resume",
           to: "/",
         },
         {
-          name: "Experience",
+          name: "Education",
         },
       ]}
     >
       <HC>
         <HW width="800px">
-          <ExperienceList />
+          <Education />
         </HW>
       </HC>
     </Subpage>

@@ -1,5 +1,5 @@
 import React from "react";
-import { EssaySubpage } from "components/utils/subpage";
+import { EssaySubpage } from "components/utils";
 import { Summary } from "./summary";
 
 export function SummarySubpage() {

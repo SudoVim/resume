@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Box, Typography, useTheme } from "@mui/material";
-import { Column } from "components/utils";
+import { Typography, useTheme } from "@mui/material";
+import { Column, EventTitle } from "components/utils";
 import { Role } from "./role";
 import { selectors } from "features";
 import { Link } from "react-router-dom";
@@ -29,34 +29,7 @@ export function Experience({ experienceKey }: Props) {
           color: theme.palette.text.primary,
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            direction: "row",
-            borderBottom: `1px dashed ${theme.palette.text.secondary}`,
-          }}
-        >
-          <Typography
-            variant="body1"
-            sx={{
-              fontWeight: "bold",
-              fontFamily: "monospace",
-            }}
-          >
-            {company}
-          </Typography>
-          {tenure ? (
-            <Typography
-              variant="body1"
-              sx={{
-                ml: 1,
-                fontFamily: "monospace",
-              }}
-            >
-              ({tenure})
-            </Typography>
-          ) : null}
-        </Box>
+        <EventTitle event={company} tenure={tenure} bold />
       </Link>
       {description ? (
         <Typography variant="body1" sx={{ fontFamily: "monospace" }}>

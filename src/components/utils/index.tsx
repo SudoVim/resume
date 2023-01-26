@@ -3,3 +3,4 @@ export { Subpage, EssaySubpage } from "./subpage";
 export { Essay } from "./essay/essay";
 export { HorizontalCenter, HC } from "./horizontal/center";
 export { HorizontalWidth, HW } from "./horizontal/width";
+export { EventTitle } from "./event_title";

@@ -4,6 +4,7 @@ import { Item } from "./item";
 import { Summary } from "components/summary";
 import { Skills } from "components/skills";
 import { ExperienceList } from "components/experience";
+import { Education } from "components/education";
 import { Divider } from "./divider";
 
 export function Body() {
@@ -23,6 +24,12 @@ export function Body() {
 
       <Item title="Experience" href="/experience">
         <ExperienceList />
+      </Item>
+
+      <Divider />
+
+      <Item title="Education" href="/education">
+        <Education />
       </Item>
     </Grid>
   );

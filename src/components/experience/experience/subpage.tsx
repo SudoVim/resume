@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Subpage, HorizontalCenter, HorizontalWidth } from "components/utils";
+import { Subpage, HC, HW } from "components/utils";
 import { useParams } from "react-router-dom";
 import { selectors } from "features";
 import { Experience } from "./experience";
@@ -36,11 +36,11 @@ export function ExperienceSubpage() {
         },
       ]}
     >
-      <HorizontalCenter>
-        <HorizontalWidth width="800px">
+      <HC>
+        <HW width="800px">
           <Experience experienceKey={experienceKey} />
-        </HorizontalWidth>
-      </HorizontalCenter>
+        </HW>
+      </HC>
     </Subpage>
   );
 }
