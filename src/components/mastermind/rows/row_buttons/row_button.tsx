@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { BlankCell } from "../cells";
 import { TileButton } from "./tile";
-import { BlankButton } from "./blank";
 import { BackButton } from "./back";
 import { PlayButton } from "./play";
 import { selectors } from "features";
@@ -27,5 +27,5 @@ export function RowButton({ index }: Props) {
     return <PlayButton />;
   }
 
-  return <BlankButton />;
+  return <BlankCell />;
 }
