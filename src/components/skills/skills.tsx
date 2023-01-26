@@ -1,7 +1,7 @@
 import React from "react";
 import { skills } from "features/skills";
 import { Grid, Box, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link } from "components/utils";
 import { useTheme } from "@mui/material/styles";
 
 export function Skills() {
@@ -15,13 +15,7 @@ export function Skills() {
               borderBottom: `1px dashed ${theme.palette.text.secondary}`,
             }}
           >
-            <Link
-              to={`/skills/${skill.key}`}
-              style={{
-                textDecoration: "none",
-                color: theme.palette.text.primary,
-              }}
-            >
+            <Link to={`/skills/${skill.key}`}>
               <Typography
                 variant="body1"
                 style={{

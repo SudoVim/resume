@@ -7,12 +7,14 @@ import { SkillSubpage } from "components/skills/skill";
 import { ExperienceListSubpage } from "components/experience";
 import { ExperienceSubpage } from "components/experience/experience";
 import { EducationSubpage } from "components/education";
-import { Mastermind } from "components/mastermind/mastermind";
+import { MastermindSubpage } from "components/mastermind";
+import { Error } from "components/error";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
     children: [
       {
         index: true,
@@ -52,7 +54,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "mastermind",
-        element: <Mastermind />,
+        element: <MastermindSubpage />,
       },
       {
         path: "education",

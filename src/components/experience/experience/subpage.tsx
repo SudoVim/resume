@@ -11,12 +11,12 @@ export function ExperienceSubpage() {
 
   const { experienceKey } = params;
   if (!experienceKey) {
-    return null;
+    throw new Error(`experience ${experienceKey} not found`);
   }
 
   const experience = experienceByKey[experienceKey];
   if (!experience) {
-    return null;
+    throw new Error(`experience ${experienceKey} not found`);
   }
 
   return (

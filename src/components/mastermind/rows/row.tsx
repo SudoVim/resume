@@ -14,7 +14,7 @@ export function Row({ index }: Props) {
   const mastermind = useSelector(selectors.mastermind.mastermind);
 
   if (!mastermind.board) {
-    return null;
+    throw new Error("mastermind not initialized");
   }
 
   // Determine if there's a user's "try" on the specific line, if this is the

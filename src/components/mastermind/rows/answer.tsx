@@ -9,7 +9,7 @@ export function AnswerRow() {
   const mastermind = useSelector(selectors.mastermind.mastermind);
 
   if (!mastermind.board) {
-    return null;
+    throw new Error("mastermind not initialized");
   }
 
   const { finished } = mastermind;
@@ -17,7 +17,7 @@ export function AnswerRow() {
   const cells: React.ReactNode[] = [];
   for (let i = 0; i < mastermind.lineWidth; i++) {
     if (!finished) {
-      cells.push(<QuestionCell />);
+      cells.push(<QuestionCell key={i} />);
     } else {
       cells.push(<TileCell key={i} line={line} index={i} />);
     }

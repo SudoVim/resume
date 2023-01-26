@@ -11,10 +11,14 @@ export function SkillSubpage() {
 
   const { skillKey } = params;
   if (!skillKey) {
-    return null;
+    throw new Error(`skill ${skillKey} not found`);
   }
 
   const skill = skillsByKey[skillKey];
+  if (!skill) {
+    throw new Error(`skill ${skillKey} not found`);
+  }
+
   return (
     <EssaySubpage
       title={skill.name}

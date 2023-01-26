@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useTheme, Typography, Breadcrumbs, Box } from "@mui/material";
+import { Link } from "../link";
+import { Typography, Breadcrumbs, Box } from "@mui/material";
 
 export type Breadcrumb = {
   name: string;
@@ -8,13 +8,12 @@ export type Breadcrumb = {
 };
 
 export type Props = {
-  title: string;
+  title: React.ReactNode;
   breadcrumbs: Breadcrumb[];
   children: React.ReactNode;
 };
 
 export function Subpage({ title, breadcrumbs, children }: Props) {
-  const theme = useTheme();
   return (
     <Box>
       <Breadcrumbs>
@@ -37,12 +36,7 @@ export function Subpage({ title, breadcrumbs, children }: Props) {
             <Link
               to={to}
               key={name}
-              style={{
-                color: theme.palette.text.primary,
-                cursor: "pointer",
-                paddingLeft: 2,
-                fontFamily: "monospace",
-              }}
+              style={{ paddingLeft: 2, textDecoration: "underline" }}
             >
               {name}
             </Link>

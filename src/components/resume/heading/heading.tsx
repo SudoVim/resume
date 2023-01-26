@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid, Typography, Link } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
+import { ExternalLink } from "components/utils";
 import { Item } from "./item";
 
 export function Heading() {
@@ -11,24 +12,14 @@ export function Heading() {
         </Typography>
       </Item>
       <Item>
-        <Link
-          href="mailto:michaelrenken@protonmail.com?subject=Job opportunity"
-          sx={{
-            textDecoration: "none",
-          }}
-        >
+        <ExternalLink href="mailto:michaelrenken@protonmail.com?subject=Job opportunity">
           michaelrenken@protonmail.com
-        </Link>
+        </ExternalLink>
       </Item>
       <Item>
-        <Link
-          href="https://www.linkedin.com/in/michael-renken-71184015/"
-          sx={{
-            textDecoration: "none",
-          }}
-        >
+        <ExternalLink href="https://www.linkedin.com/in/michael-renken-71184015/">
           https://www.linkedin.com/in/michael-renken-71184015/
-        </Link>
+        </ExternalLink>
       </Item>
     </Grid>
   );

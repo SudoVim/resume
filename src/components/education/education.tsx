@@ -1,19 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useTheme } from "@mui/material";
-import { Column, EventTitle, Essay } from "components/utils";
+import { Link, Column, EventTitle, Essay } from "components/utils";
 
 export function Education() {
-  const theme = useTheme();
   return (
     <Column>
-      <Link
-        to={"/education"}
-        style={{
-          textDecoration: "none",
-          color: theme.palette.text.primary,
-        }}
-      >
+      <Link to={"/education"}>
         <Column>
           <EventTitle
             event="The University of Texas at Austin"

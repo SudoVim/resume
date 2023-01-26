@@ -11,7 +11,7 @@ export function Skill({ skillKey }: Prop) {
   const skillsByKey = useSelector(selectors.skills.skillsByKey);
   const skill = skillsByKey[skillKey];
   if (!skill) {
-    return null;
+    throw new Error(`skill ${skillKey} not found`);
   }
 
   return (

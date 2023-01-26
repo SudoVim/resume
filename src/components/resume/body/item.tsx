@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import { Link } from "react-router-dom";
+import { Link } from "components/utils";
 
 type Props = {
   title: string;
@@ -10,17 +9,10 @@ type Props = {
 };
 
 export function Item({ title, href, children }: Props) {
-  const theme = useTheme();
   return (
     <>
       <Grid item xs={2}>
-        <Link
-          to={href}
-          style={{
-            textDecoration: "none",
-            color: theme.palette.text.primary,
-          }}
-        >
+        <Link to={href}>
           <Typography
             variant="body1"
             sx={{
