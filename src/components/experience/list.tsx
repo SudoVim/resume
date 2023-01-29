@@ -7,7 +7,7 @@ import { selectors } from "features";
 export function ExperienceList() {
   const experience = useSelector(selectors.experience.experienceKeys);
   return (
-    <Column>
+    <Column spacing={4}>
       {experience.map((expKey) => (
         <Experience key={expKey} experienceKey={expKey} />
       ))}

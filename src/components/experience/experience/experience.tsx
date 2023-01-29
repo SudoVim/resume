@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Typography } from "@mui/material";
-import { Link, Column, EventTitle } from "components/utils";
+import { Link, Column, EventTitle, Essay } from "components/utils";
 import { Role } from "./role";
 import { selectors } from "features";
+import { Responsibilities } from "./responsibilities";
 
 type Props = {
   experienceKey: string;
@@ -17,16 +17,19 @@ export function Experience({ experienceKey }: Props) {
     throw new Error(`experience ${experienceKey} not found`);
   }
 
-  const { key, company, tenure, description, roles } = experience;
+  const { key, company, tenure, title, description, responsibilities, roles } =
+    experience;
   return (
     <Column>
       <Link to={`/experience/${key}`}>
-        <EventTitle event={company} tenure={tenure} bold />
+        <Column>
+          <EventTitle event={company} tenure={tenure} bold />
+          {title ? <EventTitle event={title} /> : null}
+        </Column>
       </Link>
-      {description ? (
-        <Typography variant="body1" sx={{ fontFamily: "monospace" }}>
-          {description}
-        </Typography>
+      {description ? <Essay>{description}</Essay> : null}
+      {responsibilities ? (
+        <Responsibilities responsibilities={responsibilities} />
       ) : null}
       {roles?.map((role, i) => (
         <Role key={i} role={role} />

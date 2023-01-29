@@ -9,11 +9,13 @@ type Props = {
 export function Column({ children, spacing }: Props) {
   return (
     <Grid container spacing={spacing !== undefined ? spacing : 2}>
-      {children?.map((child, i) => (
-        <Grid key={i} item xs={12}>
-          {child}
-        </Grid>
-      ))}
+      {children
+        ?.filter((child) => Boolean(child))
+        .map((child, i) => (
+          <Grid key={i} item xs={12}>
+            {child}
+          </Grid>
+        ))}
     </Grid>
   );
 }

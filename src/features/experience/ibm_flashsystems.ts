@@ -7,7 +7,7 @@ cycles, and regression.
 export const ibm_flashsystems = {
   key: "ibm_flashsystems",
   company: "IBM FlashSystems",
-  tenure: "January 2013 - April 2019",
+  tenure: "Acquired January 2013 - April 2019",
   description: IBM_FLASHSYSTEMS_DESCRIPTION,
   roles: [
     {
