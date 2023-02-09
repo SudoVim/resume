@@ -14,4 +14,5 @@ export type Experience = {
   description?: string;
   responsibilities?: string[];
   roles?: Role[];
+  essay?: string;
 };

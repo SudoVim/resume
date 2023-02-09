@@ -51,6 +51,14 @@ our Dockerfile. It's much easier when you don't have to build your own
 operating system from scratch.
 `;
 
+const AWS_DESCRIPTION = `
+I've used Amazon Web Services (AWS) very extensively at PullRequest and now
+HackerOne. I took our old infrastructure, which was comprised of a few static
+instances that had been running for years and turned it into an Infrastructure
+as Code (IaC) project that gets deployed automatically and ensures that
+instances don't live too long and receive security updates periodically.
+`;
+
 export const devops = [
   {
     key: "linux",
@@ -61,5 +69,10 @@ export const devops = [
     key: "docker",
     name: "Docker",
     description: DOCKER_DESCRIPTION,
+  },
+  {
+    key: "aws",
+    name: "AWS",
+    description: AWS_DESCRIPTION,
   },
 ];

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Subpage, HC, HW } from "components/utils";
+import { Subpage, HC, HW, Column, Essay } from "components/utils";
 import { useParams } from "react-router-dom";
 import { selectors } from "features";
 import { Experience } from "./experience";
@@ -19,6 +19,7 @@ export function ExperienceSubpage() {
     throw new Error(`experience ${experienceKey} not found`);
   }
 
+  const { essay } = experience;
   return (
     <Subpage
       title={experience.company}
@@ -38,7 +39,10 @@ export function ExperienceSubpage() {
     >
       <HC>
         <HW width="800px">
-          <Experience experienceKey={experienceKey} />
+          <Column>
+            <Experience experienceKey={experienceKey} />
+            {essay ? <Essay>{essay}</Essay> : null}
+          </Column>
         </HW>
       </HC>
     </Subpage>
