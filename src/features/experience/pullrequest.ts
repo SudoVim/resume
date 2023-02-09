@@ -1,6 +1,7 @@
 const PULLREQUEST_DESCRIPTION = `
 Lead many different development efforts in order to expand the PullRequest
-product line and to ensure both the reliability and scalability of the service.
+product line and to ensure both the reliability and scalability of the service
+as it grows and finds market fit.
 `;
 
 export const pullrequest = {

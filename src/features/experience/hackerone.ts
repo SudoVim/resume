@@ -1,6 +1,7 @@
 const HACKERONE_DESCRIPTION = `
-HackerOne acquired PullRequest and the PullRequest team. At HackerOne, we
-continued to perform much of the same duties as at PullRequest.
+HackerOne acquired PullRequest and the PullRequest team. In the new HackerOne
+"Code Review" team, I've continued to perform many of the same duties as at
+PullRequest.
 `;
 
 export const hackerone = {
@@ -8,6 +9,6 @@ export const hackerone = {
   company: "Hackerone",
   title: "Staff Software Engineer",
   description: HACKERONE_DESCRIPTION,
-  tenure: "Acquired April 2022 - Present",
+  tenure: "April 2022 - Present",
   skills: ["golang", "python", "typescript"],
 };

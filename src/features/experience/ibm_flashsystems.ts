@@ -1,13 +1,14 @@
 const IBM_FLASHSYSTEMS_DESCRIPTION = `
-Worked in all aspects of the day-to-day at IBM FlashSystems and succeeded at
+IBM acquired Texas Memory Systems and the Texas Memory Systems team. Here, I
+worked in all aspects of the day-to-day at IBM FlashSystems and succeeded at
 not only improving the product itself but also our core infrastructure, release
-cycles, and regression.
+cycles, and regression testing.
 `;
 
 export const ibm_flashsystems = {
   key: "ibm_flashsystems",
   company: "IBM FlashSystems",
-  tenure: "Acquired January 2013 - April 2019",
+  tenure: "January 2013 - April 2019",
   description: IBM_FLASHSYSTEMS_DESCRIPTION,
   roles: [
     {
@@ -15,19 +16,23 @@ export const ibm_flashsystems = {
       tenure: "February 2014 - April 2019",
       responsibilities: [
         `designed and implemented distributed system for digesting and
-analyzing product debug data using MongoDB, Celery, and Elasticsearch`,
-        `architecting management software infrastructure for FlashSystems`,
-        `regularly communicating best practices when using internal project
-infrastructure`,
-        `documenting internal project infrastructure in a way that’s easy to
-quickly understand the bigger picture but also showcase the inner workings and
-design of the specific modules`,
-        `reviewing others’ code to ensure cohesion between modules and to
-better educate them on which API functions are best to use where and why`,
-        `organizing release cycles around new features and bugs to tighten the
-feedback loop between test and development`,
-        `designed and implemented APIs to use FlashSystems as a part of larger
-products`,
+analyzing product debug data`,
+        `architected management software infrastructure for FlashSystems and
+communicated their effective use through code review and documentation`,
+        `created and organized release cycles around new features and bugs to
+tighten the feedback loop between test and development`,
+        `drove integration efforts in order to use FlashSystem as a component
+of larger products`,
+      ],
+    },
+    {
+      name: "Software Engineer - DevOps",
+      tenure: "January 2013 - February 2014",
+      responsibilities: [
+        "constructed automated build pipeline",
+        `created and maintained distributed, scalable test engine for which I
+received an award`,
+        "designed and implemented an expandable, flexible, testing harness",
       ],
     },
   ],
