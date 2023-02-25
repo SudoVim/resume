@@ -1,0 +1,27 @@
+name: Deploy
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  deploy:
+
+    permissions:
+      pages: write
+      id-token: write
+
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+    - run: npm install
+
+    - run: npm run build
+
+    - uses: actions/upload-pages-artifact@v1
+      with:
+        path: build/
+
+    - uses: actions/deploy-pages@v1

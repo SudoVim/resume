@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "jest --watch",
     "eject": "react-scripts eject",
-    "format": "node_modules/prettier/bin-prettier.js --write 'src/**/*.ts' 'src/**/*.tsx'"
+    "format": "prettier --write 'src/**/*.ts' 'src/**/*.tsx'"
   },
   "eslintConfig": {
     "extends": [
