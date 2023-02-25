@@ -3,6 +3,7 @@ on:
   push:
     branches:
     - master
+    - wip/deploy-tree
 
 jobs:
   deploy:
