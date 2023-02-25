@@ -16,15 +16,14 @@ const INDEX_FILEPATH = path.join(BUILD_DIR, INDEX_FILENAME);
 
 function createCopy(destPath: string, filename?: string) {
   const dir = path.join(BUILD_DIR, destPath);
-  fs.mkdir(dir, (err: any) => {
-    const destFilepath = path.join(dir, filename || INDEX_FILENAME);
-    fs.copyFile(INDEX_FILEPATH, destFilepath, (err: any) => {
-      if (err) {
-        throw err;
-      }
+  fs.mkdirSync(dir, { recursive: true });
+  const destFilepath = path.join(dir, filename || INDEX_FILENAME);
+  fs.copyFile(INDEX_FILEPATH, destFilepath, (err: any) => {
+    if (err) {
+      throw err;
+    }
 
-      console.log(`Created ${destFilepath}`);
-    });
+    console.log(`Created ${destFilepath}`);
   });
 }
 createCopy('.', '404.html');
