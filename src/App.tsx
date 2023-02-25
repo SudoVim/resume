@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, useTheme } from "@mui/material";
 import { Outlet } from "react-router-dom";
+import { Column, HC } from "components/utils";
+import { Footer } from "components/footer";
 
 export function App() {
   const theme = useTheme();
@@ -13,19 +15,26 @@ export function App() {
         background: theme.palette.background.default,
       }}
     >
-      <Box
-        sx={{
-          background: theme.palette.background.paper,
-          margin: 2,
-          padding: 2,
-          border: `1px solid ${theme.palette.text.secondary}`,
-          borderRadius: 2,
-          fontFamily: "monospace",
-          width: "1200px",
-        }}
-      >
-        <Outlet />
-      </Box>
+      <Column>
+        <HC>
+          <Box
+            sx={{
+              background: theme.palette.background.paper,
+              margin: 2,
+              padding: 2,
+              border: `1px solid ${theme.palette.text.secondary}`,
+              borderRadius: 2,
+              fontFamily: "monospace",
+              width: "1200px",
+            }}
+          >
+            <Outlet />
+          </Box>
+        </HC>
+        <HC>
+          <Footer />
+        </HC>
+      </Column>
     </Box>
   );
 }
