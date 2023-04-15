@@ -10,6 +10,7 @@ export const ibm_flashsystems = {
   company: "IBM FlashSystems",
   tenure: "January 2013 - April 2019",
   description: IBM_FLASHSYSTEMS_DESCRIPTION,
+  skills: ["c", "python", "linux", "docker"],
   roles: [
     {
       name: "Senior Software Infrastructure Engineer",

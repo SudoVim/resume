@@ -4,12 +4,20 @@ import { Experience } from "./experience";
 import { Column } from "components/utils";
 import { selectors } from "features";
 
-export function ExperienceList() {
+type Props = {
+  showSkills?: boolean;
+};
+
+export function ExperienceList({ showSkills }: Props) {
   const experience = useSelector(selectors.experience.experienceKeys);
   return (
     <Column spacing={4}>
       {experience.map((expKey) => (
-        <Experience key={expKey} experienceKey={expKey} />
+        <Experience
+          key={expKey}
+          experienceKey={expKey}
+          showSkills={showSkills}
+        />
       ))}
     </Column>
   );

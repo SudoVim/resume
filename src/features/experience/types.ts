@@ -2,7 +2,6 @@ export type Role = {
   name: string;
   tenure?: string;
   description?: string;
-  skills?: string[];
   responsibilities?: string[];
 };
 
@@ -15,4 +14,5 @@ export type Experience = {
   responsibilities?: string[];
   roles?: Role[];
   essay?: string;
+  skills?: string[];
 };

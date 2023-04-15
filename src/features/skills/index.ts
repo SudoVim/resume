@@ -1,12 +1,15 @@
-import { Skill } from "./skill";
+import { Skill, SkillsByKey } from "./types";
 import { languages } from "./languages";
 import { devops } from "./devops";
 import { createSelector } from "@reduxjs/toolkit";
+import { State } from "features/types";
 
 export const skills: Skill[] = [...languages, ...devops];
 
-const skillsByKey = createSelector(() => {
-  const ret: Record<string, Skill> = {};
+const getSkills = (state: State) => skills;
+
+const getSkillsByKey = createSelector(getSkills, (skills: Skill[]) => {
+  const ret: SkillsByKey = {};
   for (const skill of skills) {
     ret[skill.key] = skill;
   }
@@ -15,5 +18,6 @@ const skillsByKey = createSelector(() => {
 });
 
 export const selectors = {
-  skillsByKey,
+  skills: getSkills,
+  skillsByKey: getSkillsByKey,
 };

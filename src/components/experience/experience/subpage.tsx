@@ -40,7 +40,7 @@ export function ExperienceSubpage() {
       <HC>
         <HW width="800px">
           <Column>
-            <Experience experienceKey={experienceKey} />
+            <Experience experienceKey={experienceKey} showSkills />
             {essay ? <Essay>{essay}</Essay> : null}
           </Column>
         </HW>
