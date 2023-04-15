@@ -44,31 +44,23 @@ end, I lead the design and implementation of our qualified.dev product, which
 we used in order to facilitate technical screenings for software engineering
 candidates for roles at our customers' companies. The service itself served as
 the first "customer" service of our PullRequest application in that it had its
-own authentication token that would be used to interact with the PullRequest
-application. The exposed API would be responsible for creating new review jobs
-based on .zip files and ensuring that the qualified.dev service gets notified
-when the job is finished so that it can update its own interface. The customer
-could use the application to send candidates our technical screening problems
-via the web UI. The candidates will receive an anonymous link that they can use
-to download the problem and submit their solution. Once submitted, it'll be
-sent to our reviewer network. After the review, the results are transmitted
-back to the customer to inform their final decision.
+own authentication mechanism that would be used to interact with its own API.
 
 For the above qualified.dev application, I also developed our integration with
 the Greenhouse service so that customers can automatically send problems to
-their candidates when they reach a certain stage of the pipeline. Toward that
-end, I also developed the GitHub Marketplace integration for our PullRequest
-application. Using the marketplace, customers can sign up for our code review
-services and get billed through GitHub.
+their candidates when they reach a certain stage of the pipeline. I also
+developed the GitHub Marketplace integration for our PullRequest application.
+Using the marketplace, customers can sign up for our code review services and
+get billed through GitHub.
 
 One of my largest projects at PullRequest was to take our Amazon Web Services
-(AWS) infrastructure and take it from a few static instances created through
-the management console and turn it into an Infrastructure as Code (IaC)
-project. I was able to devise a system that would automatically scale out and
-in instances when needed, would deploy code, and would recycle instances once
-per day in order to pull in security updates so that I can work on other
-projects and not bother constantly maintaining it. If there were any issues, I
-would be notified of them and would be able to act swiftly to fix the problem.
+(AWS) infrastructure from a few static instances created through the management
+console and turn it into an Infrastructure as Code (IaC) project. I was able to
+devise a system that would automatically scale out and in instances when
+needed, would deploy code, and would recycle instances once per day in order to
+pull in security updates so that I can work on other projects and not bother
+constantly maintaining it. If there were any issues, I would be notified of
+them and would be able to act swiftly to fix the problem.
 `;
 
 export const pullrequest = {
@@ -86,6 +78,6 @@ Azure DevOps`,
     `refactored much of the internal application code to be more scalable
 and maintainable`,
   ],
-  skills: ["python", "golang", "typescript"],
+  skills: ["typescript", "golang", "python", "linux", "docker", "aws"],
   essay: PULLREQUEST_ESSAY,
 };

@@ -10,5 +10,5 @@ export const hackerone = {
   title: "Staff Software Engineer",
   description: HACKERONE_DESCRIPTION,
   tenure: "April 2022 - Present",
-  skills: ["golang", "python", "typescript"],
+  skills: ["typescript", "golang", "python", "linux", "docker", "aws"],
 };

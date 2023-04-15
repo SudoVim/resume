@@ -1,14 +1,20 @@
 import React from "react";
-import { skills } from "features/skills";
+import { skills as defaultSkills } from "features/skills";
+import { Skill } from "features/skills/types";
 import { Grid, Box, Typography } from "@mui/material";
 import { Link } from "components/utils";
 import { useTheme } from "@mui/material/styles";
 
-export function Skills() {
+type Props = {
+  skills?: Skill[];
+};
+
+export function Skills({ skills }: Props) {
   const theme = useTheme();
+  const skillsToUse = skills ?? defaultSkills;
   return (
     <Grid container spacing={2}>
-      {skills.map((skill) => (
+      {skillsToUse.map((skill) => (
         <Grid item key={skill.key} xs={4}>
           <Box
             sx={{
