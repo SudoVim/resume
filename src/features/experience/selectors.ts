@@ -1,9 +1,9 @@
 import { experience } from "./experience";
 import { createSelector } from "reselect";
 import { Experience } from "./types";
-import { selectors as skillsSelectors } from "features/skills";
-import { Skill, SkillsByKey } from "features/skills/types";
-import { State } from "features/types";
+import { selectors as skillsSelectors } from "../skills";
+import { Skill, SkillsByKey } from "../skills/types";
+import { State } from "../types";
 
 function getExperience(state: State) {
   return experience;
