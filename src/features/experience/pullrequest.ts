@@ -2,6 +2,11 @@ const PULLREQUEST_DESCRIPTION = `
 Lead many different development efforts in order to expand the PullRequest
 product line and to ensure both the reliability and scalability of the service
 as it grows and finds market fit.
+
+- ensured that any code that was shipped for the project was of the highest quality
+- developed new products and integrations like the on-premise proxy and Azure DevOps
+- developed and maintained our cloud infrastructure and its code stack
+- refactored much of the internal application code to be more scalable and maintainable
 `;
 
 const PULLREQUEST_ESSAY = `
@@ -16,20 +21,22 @@ My first big project was to take the On-Premise Proxy and extend it to support
 more code providers than just Bitbucket Server. The On-Premise Proxy is a
 service running in a customer's secure network that facilitates the PullRequest
 application without needing PullRequest to be able to talk to the code
-provider. While working on this project, I added support for GitLab
+provider directly. While working on this project, I added support for GitLab
 Self-Managed, GitHub Enterprise, and Azure DevOps Server. All while I was
 adding these services, I also worked on consolidating the provider interface
 code between this proxy service and the web application into one service with a
 grpc interface that I called providerservice. This is the code that is now used
 for both our web application and our On-Premise Proxy. I also did the same for
 our diff interface which deals with the code repositories directly. This
-functionality was spun off into its own distributed service called diffservice.
+functionality was spun off into its own distributed, clustered service called
+diffservice.
 
-Because I cannot be sated by simply working on a single service, I have also
+Because I cannot be sated by simply working on a single code base, I have also
 contributed extensively to our web application and the customer and reviewer
 web clients. The web application is written in PHP, in which I had no prior
 experience. However, I learned fairly quickly the pitfalls of the language. I'm
-still continuing to discover caveats that could cause problems.
+still continuing to discover caveats that could cause problems, but recent
+versions of the language are adding much-needed features and safegurds.
 
 In terms of the web clients, I already had experience with React and
 JavaScript, but I was able to learn some useful utilities for extending React
@@ -45,6 +52,7 @@ we used in order to facilitate technical screenings for software engineering
 candidates for roles at our customers' companies. The service itself served as
 the first "customer" service of our PullRequest application in that it had its
 own authentication mechanism that would be used to interact with its own API.
+Unfortunately, this product was discontinued under HackerOne.
 
 For the above qualified.dev application, I also developed our integration with
 the Greenhouse service so that customers can automatically send problems to
@@ -69,15 +77,6 @@ export const pullrequest = {
   title: "Senior Software Engineer",
   tenure: "April 2019 - Acquired April 2022",
   description: PULLREQUEST_DESCRIPTION,
-  responsibilities: [
-    `ensured that any code that was shipped for the project was of the
-highest quality`,
-    `developed new products and integrations like the on-premise proxy and
-Azure DevOps`,
-    `developed and maintained our cloud infrastructure and its code stack`,
-    `refactored much of the internal application code to be more scalable
-and maintainable`,
-  ],
   skills: ["typescript", "golang", "python", "linux", "docker", "aws"],
   essay: PULLREQUEST_ESSAY,
 };
