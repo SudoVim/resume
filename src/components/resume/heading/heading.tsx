@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Box } from "@mui/material";
 import { ExternalLink } from "components/utils";
 import { Item } from "./item";
 
@@ -20,6 +20,22 @@ export function Heading() {
         <ExternalLink href="https://www.linkedin.com/in/michael-renken-71184015/">
           https://www.linkedin.com/in/michael-renken-71184015/
         </ExternalLink>
+      </Item>
+      <Item>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            columnGap: 1,
+          }}
+        >
+          <Typography variant="body2">Source:</Typography>
+          <ExternalLink href="https://github.com/SudoVim/resume">
+            https://github.com/SudoVim/resume
+          </ExternalLink>
+        </Box>
       </Item>
     </Grid>
   );
