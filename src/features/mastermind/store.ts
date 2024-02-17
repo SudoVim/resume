@@ -25,7 +25,7 @@ export const initialState: MastermindState = {
 
 export function generateTry(
   board: MastermindBoard,
-  line: MastermindLine
+  line: MastermindLine,
 ): MastermindTry {
   const { answer } = board;
   let numCorrect = 0;

@@ -39,7 +39,7 @@ describe("test selectors.skillsByExperienceKey", () => {
     const skillsByKey = {};
     const skillsByExperienceKey = selectors.skillsByExperienceKey.resultFunc(
       experience,
-      skillsByKey
+      skillsByKey,
     );
     expect(skillsByExperienceKey).toEqual({});
   });
@@ -48,7 +48,7 @@ describe("test selectors.skillsByExperienceKey", () => {
     const skillsByKey = {};
     const skillsByExperienceKey = selectors.skillsByExperienceKey.resultFunc(
       experience,
-      skillsByKey
+      skillsByKey,
     );
     expect(skillsByExperienceKey).toEqual({});
   });
@@ -80,7 +80,7 @@ describe("test selectors.skillsByExperienceKey", () => {
     };
     const skillsByExperienceKey = selectors.skillsByExperienceKey.resultFunc(
       experience,
-      skillsByKey
+      skillsByKey,
     );
     expect(skillsByExperienceKey).toEqual({
       "some-key": [{ skill: "data" }],

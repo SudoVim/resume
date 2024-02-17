@@ -28,7 +28,7 @@ describe("exercise the store mechanism", () => {
       .mockReturnValueOnce(2)
       .mockReturnValueOnce(3);
     expect(store(state, mastermindSlice.actions.initialize())).toEqual(
-      initialized
+      initialized,
     );
   });
   it("initializes the board from a non-initialized state", () => {
@@ -45,7 +45,7 @@ describe("exercise the store mechanism", () => {
       .mockReturnValueOnce(2)
       .mockReturnValueOnce(3);
     expect(store(state, mastermindSlice.actions.initialize())).toEqual(
-      initialized
+      initialized,
     );
   });
   it("does not play a tile when not initialized", () => {
