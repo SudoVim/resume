@@ -17,8 +17,9 @@ coordinating what I call "integration" tests against hundreds of our production
 systems running different iterations of hardware and software and reporting
 results from all of them.
 
-Since IBM, I've continued to use Python for integration testing, data
-analaysis, and for developing web applications using the Django framework.
+At PullRequest and HackerOne, I've continued to use Python for integration
+testing, data analaysis, and for developing the now-defunct qualified.dev
+application using Django.
 `;
 
 const GOLANG_DESCRIPTION = `

@@ -31,7 +31,9 @@ export function Heading() {
             columnGap: 1,
           }}
         >
-          <Typography variant="body2">Source:</Typography>
+          <Typography variant="body2" fontFamily="monospace">
+            Source:
+          </Typography>
           <ExternalLink href="https://github.com/SudoVim/resume">
             https://github.com/SudoVim/resume
           </ExternalLink>
