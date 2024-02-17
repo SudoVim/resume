@@ -1,13 +1,9 @@
 import React from "react";
 import { Subpage } from "components/utils/subpage";
 import { Props } from "./subpage";
-import { HorizontalCenter, HorizontalWidth } from "../horizontal";
+import { HorizontalCenter } from "../horizontal";
 
 export function EssaySubpage(props: Props) {
-  const children = (
-    <HorizontalCenter>
-      <HorizontalWidth width="600px">{props.children}</HorizontalWidth>
-    </HorizontalCenter>
-  );
+  const children = <HorizontalCenter>{props.children}</HorizontalCenter>;
   return <Subpage {...props}>{children}</Subpage>;
 }

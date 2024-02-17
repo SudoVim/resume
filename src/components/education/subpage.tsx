@@ -1,5 +1,5 @@
 import React from "react";
-import { Subpage, HC, HW } from "components/utils";
+import { Subpage, HC } from "components/utils";
 import { Education } from "./education";
 
 export function EducationSubpage() {
@@ -17,9 +17,7 @@ export function EducationSubpage() {
       ]}
     >
       <HC>
-        <HW width="800px">
-          <Education />
-        </HW>
+        <Education />
       </HC>
     </Subpage>
   );

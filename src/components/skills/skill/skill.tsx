@@ -15,7 +15,7 @@ export function Skill({ skillKey }: Prop) {
   }
 
   return (
-    <Grid container spacing={2} sx={{ width: "600px" }}>
+    <Grid container spacing={2}>
       {skill.description.split("\n\n").map((paragraph, i) => (
         <Grid item key={i}>
           {i !== 0 ? <br /> : null}

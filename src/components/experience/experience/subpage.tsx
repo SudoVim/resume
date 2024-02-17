@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Subpage, HC, HW, Column, Essay } from "components/utils";
+import { Subpage, HC, Column, Essay } from "components/utils";
 import { useParams } from "react-router-dom";
 import { selectors } from "features";
 import { Experience } from "./experience";
@@ -38,12 +38,10 @@ export function ExperienceSubpage() {
       ]}
     >
       <HC>
-        <HW width="800px">
-          <Column>
-            <Experience experienceKey={experienceKey} showSkills />
-            {essay ? <Essay>{essay}</Essay> : null}
-          </Column>
-        </HW>
+        <Column>
+          <Experience experienceKey={experienceKey} showSkills />
+          {essay ? <Essay>{essay}</Essay> : null}
+        </Column>
       </HC>
     </Subpage>
   );
