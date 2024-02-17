@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import { selectors } from "./selectors";
 
 describe("test selectors.experienceKeys", () => {

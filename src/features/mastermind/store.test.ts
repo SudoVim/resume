@@ -1,9 +1,12 @@
+import { describe, it, expect, vi } from "vitest";
 import { initialState, store, mastermindSlice, generateTry } from "./store";
 import random from "random";
 
-jest.mock("random", () => {
+vi.mock("random", () => {
   return {
-    int: jest.fn(),
+    default: {
+      int: vi.fn(),
+    },
   };
 });
 
