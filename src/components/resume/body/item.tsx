@@ -1,39 +1,22 @@
 import React from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Box } from "@mui/material";
 import { Link } from "components/utils";
 
 type Props = {
-  title: string;
-  href: string;
   children: React.ReactNode;
 };
 
-export function Item({ title, href, children }: Props) {
+export function Item({ children }: Props) {
   return (
-    <>
-      <Grid item xs={2}>
-        <Link to={href}>
-          <Typography
-            variant="body1"
-            sx={{
-              fontFamily: "monospace",
-              fontSize: 18,
-            }}
-          >
-            {title}
-          </Typography>
-        </Link>
-      </Grid>
-      <Grid
-        item
-        xs={10}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        {children}
-      </Grid>
-    </>
+    <Grid
+      item
+      xs={12}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <Box sx={{ p: 1.5, width: "100%" }}>{children}</Box>
+    </Grid>
   );
 }

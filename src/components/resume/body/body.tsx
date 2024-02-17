@@ -10,25 +10,27 @@ import { Divider } from "./divider";
 export function Body() {
   return (
     <Grid container spacing={2}>
-      <Item title="Summary" href="/summary">
+      <Divider title="Summary" href="/summary" />
+
+      <Item>
         <Summary />
       </Item>
 
-      <Divider />
+      <Divider title="Skills" href="/skills" />
 
-      <Item title="Skills" href="/skills">
+      <Item>
         <Skills />
       </Item>
 
-      <Divider />
+      <Divider title="Experience" href="/experience" />
 
-      <Item title="Experience" href="/experience">
+      <Item>
         <ExperienceList />
       </Item>
 
-      <Divider />
+      <Divider title="Education" href="/education" />
 
-      <Item title="Education" href="/education">
+      <Item>
         <Education />
       </Item>
     </Grid>

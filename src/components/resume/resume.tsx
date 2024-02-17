@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid } from "@mui/material";
-import { Divider } from "./divider";
 import { Heading } from "./heading";
 import { Body } from "./body";
 
@@ -13,8 +12,6 @@ export function Resume() {
         <Heading />
       </Grid>
       <Grid item xs={2} />
-
-      <Divider />
 
       {/* The body will take up the full width */}
       <Grid item xs={12}>

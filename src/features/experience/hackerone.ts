@@ -1,10 +1,16 @@
 const HACKERONE_DESCRIPTION = `
-HackerOne acquired PullRequest and the PullRequest team. In the new HackerOne
-"Code Review" team, I've continued to perform all of the same full stack
-software development and technical lead duties as at PullRequest. In addition,
-I took on several new product initiatives including SAST-directed
-human-in-the-loop and AI-assisted code review variants. I've also branched out
-into creating blog content to drive more traffic to our marketing site.
+As the Technical Lead for the HackerOne "Code Review" team following the
+acquisition of PullRequest, I have leveraged my extensive full stack
+development expertise to continue advancing our technical goals. In this
+leadership role, I have been instrumental in mentoring and guiding a dynamic
+team of engineers and fostering an environment of continuous improvement. My
+contributions have extended beyond traditional software development to
+spearhead several key product initiatives, including a budget-friendly product
+option that integrates Static Application Security Testing (SAST) and AI into a
+new mechanism that decides which changes are more important to review. In
+addition, I have taken a proactive role in content creation, developing
+insightful blog content aimed at driving increased traffic to our marketing
+site.
 `;
 
 const HACKERONE_ESSAY = `
