@@ -8,12 +8,13 @@ into creating blog content to drive more traffic to our marketing site.
 `;
 
 const HACKERONE_ESSAY = `
-Working at a larger company grants us greater flexibility to refine our
-products, thereby enhancing their alignment with the specific requirements of
-enterprise clientele. Being part of a small, agile team enables us to swiftly
-iterate on these concepts, all the while expanding our backend infrastructure
-to accommodate additional use cases. This approach ensures continuous
-improvement and support for our existing product suite.
+Working at a larger company grants me greater flexibility to refine our
+products with experimental new features, thereby enhancing their alignment with
+the specific requirements of enterprise clientele. In addition, being part of a
+small, agile team inside that company, enables me to swiftly iterate on these
+concepts, all the while expanding our backend infrastructure to accommodate
+additional use cases. This approach ensures continuous improvement and support
+for our existing product suite.
 
 Because I'm constantly focusing on innovative new use cases for the existing
 code review software platform, I'm also collaborating with customers, internal
