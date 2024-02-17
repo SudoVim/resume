@@ -39,21 +39,28 @@ features.
 `;
 
 const TYPESCRIPT_DESCRIPTION = `
-TypeScript is probably the "newest" of the languages that I've learned. I've
-been using JavaScript in its various incarnations since my early days at Texas
-Memory Systems from when I was maintaining our internal parts database to when
-I was developing experimental React apps to compare errors from failure reports
-across hundreds of systems.
+TypeScript represents the most recent addition to my programming language
+repertoire. My journey with JavaScript dates back to my early days at Texas
+Memory Systems, where I engaged in a range of projects from maintaining our
+internal parts database to developing experimental React applications to
+analyze errors across numerous systems.
 
-It wasn't until I was working at PullRequest that I had started transitioning
-away from JavaScript toward TypeScript. While TypeScript is strongly typed,
-which is a huge benefit from the typical interpreted programming language, you
-definitely start hitting the drawback of the rigid type definitions. The often
-esoteric error messages don't help, either. What else did you expect from
-Microsoft?
+My transition to TypeScript began at PullRequest. The shift from JavaScript's
+flexibility to TypeScript's strong typing system marked a significant change in
+my development process. TypeScript's static typing offers considerable
+advantages, particularly in catching errors early and ensuring code
+reliability—a stark contrast to the dynamic nature of traditional interpreted
+languages. However, this transition was not without its challenges. The strict
+type definitions in TypeScript sometimes led to rigid constraints, and the
+cryptic error messages, a somewhat notorious aspect of Microsoft's tooling,
+often added a layer of complexity to debugging.
 
-However, it's a huge step in the right direction for web clients, and it's a
-necessecity when leveraging the powerful frameworks in the React family.
+Despite these hurdles, I've come to view TypeScript as an essential step
+forward for developing robust web client applications. Its integration into the
+React ecosystem, in particular, underscores its value in building scalable and
+maintainable applications. The language's emphasis on type safety and
+predictability is indispensable, especially when working with complex
+frameworks within the React family.
 `;
 
 const C_DESCRIPTION = `

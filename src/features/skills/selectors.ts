@@ -1,10 +1,11 @@
 import { Skill, SkillsByKey } from "./types";
 import { languages } from "./languages";
+import { frameworks } from "./frameworks";
 import { devops } from "./devops";
 import { createSelector } from "@reduxjs/toolkit";
 import { State } from "features/types";
 
-export const skills: Skill[] = [...languages, ...devops];
+export const skills: Skill[] = [...languages, ...frameworks, ...devops];
 
 const getSkills = (state: State) => skills;
 
