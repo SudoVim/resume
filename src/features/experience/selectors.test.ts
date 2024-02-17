@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import { selectors } from "./selectors";
 
 describe("test selectors.experienceKeys", () => {
@@ -39,7 +40,7 @@ describe("test selectors.skillsByExperienceKey", () => {
     const skillsByKey = {};
     const skillsByExperienceKey = selectors.skillsByExperienceKey.resultFunc(
       experience,
-      skillsByKey
+      skillsByKey,
     );
     expect(skillsByExperienceKey).toEqual({});
   });
@@ -48,7 +49,7 @@ describe("test selectors.skillsByExperienceKey", () => {
     const skillsByKey = {};
     const skillsByExperienceKey = selectors.skillsByExperienceKey.resultFunc(
       experience,
-      skillsByKey
+      skillsByKey,
     );
     expect(skillsByExperienceKey).toEqual({});
   });
@@ -80,7 +81,7 @@ describe("test selectors.skillsByExperienceKey", () => {
     };
     const skillsByExperienceKey = selectors.skillsByExperienceKey.resultFunc(
       experience,
-      skillsByKey
+      skillsByKey,
     );
     expect(skillsByExperienceKey).toEqual({
       "some-key": [{ skill: "data" }],

@@ -1,9 +1,12 @@
+import { describe, it, expect, vi } from "vitest";
 import { initialState, store, mastermindSlice, generateTry } from "./store";
 import random from "random";
 
-jest.mock("random", () => {
+vi.mock("random", () => {
   return {
-    int: jest.fn(),
+    default: {
+      int: vi.fn(),
+    },
   };
 });
 
@@ -28,7 +31,7 @@ describe("exercise the store mechanism", () => {
       .mockReturnValueOnce(2)
       .mockReturnValueOnce(3);
     expect(store(state, mastermindSlice.actions.initialize())).toEqual(
-      initialized
+      initialized,
     );
   });
   it("initializes the board from a non-initialized state", () => {
@@ -45,7 +48,7 @@ describe("exercise the store mechanism", () => {
       .mockReturnValueOnce(2)
       .mockReturnValueOnce(3);
     expect(store(state, mastermindSlice.actions.initialize())).toEqual(
-      initialized
+      initialized,
     );
   });
   it("does not play a tile when not initialized", () => {

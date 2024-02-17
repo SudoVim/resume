@@ -12,8 +12,8 @@ export function ResultCell({ type }: Props) {
     type === "empty"
       ? undefined
       : type === "correct"
-      ? COLORS.correct
-      : COLORS.close;
+        ? COLORS.correct
+        : COLORS.close;
   return (
     <Grid
       item

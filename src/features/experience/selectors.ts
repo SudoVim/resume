@@ -11,7 +11,7 @@ function getExperience(state: State) {
 
 const getExperienceKeys = createSelector(
   getExperience,
-  (experience: Experience[]): string[] => experience.map((exp) => exp.key)
+  (experience: Experience[]): string[] => experience.map((exp) => exp.key),
 );
 
 const getExperienceByKey = createSelector(
@@ -23,7 +23,7 @@ const getExperienceByKey = createSelector(
     }
 
     return ret;
-  }
+  },
 );
 
 const getSkillsByExperienceKey = createSelector(
@@ -31,7 +31,7 @@ const getSkillsByExperienceKey = createSelector(
   skillsSelectors.skillsByKey,
   (
     experience: Experience[],
-    skillsByKey: SkillsByKey
+    skillsByKey: SkillsByKey,
   ): Record<string, Skill[]> => {
     const ret: Record<string, Skill[]> = {};
     for (const exp of experience) {
@@ -51,7 +51,7 @@ const getSkillsByExperienceKey = createSelector(
     }
 
     return ret;
-  }
+  },
 );
 
 function getSkillsForExperienceKey(state: State, experienceKey: string) {

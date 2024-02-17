@@ -17,7 +17,7 @@ export function Experience({ experienceKey, showSkills }: Props) {
     experienceKey
   ];
   const skills = useSelector((state: State) =>
-    selectors.experience.skillsForExperienceKey(state, experienceKey)
+    selectors.experience.skillsForExperienceKey(state, experienceKey),
   );
   if (!experience) {
     throw new Error(`experience ${experienceKey} not found`);
@@ -38,9 +38,7 @@ export function Experience({ experienceKey, showSkills }: Props) {
       {responsibilities ? (
         <Responsibilities responsibilities={responsibilities} />
       ) : null}
-      {roles?.map((role, i) => (
-        <Role key={i} role={role} />
-      ))}
+      {roles?.map((role, i) => <Role key={i} role={role} />)}
     </Column>
   );
 }
