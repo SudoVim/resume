@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, Box } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { Link } from "components/utils";
 
 type Props = {
@@ -16,7 +16,7 @@ export function Item({ children }: Props) {
         alignItems: "center",
       }}
     >
-      <Box sx={{ p: 1.5, width: "100%" }}>{children}</Box>
+      {children}
     </Grid>
   );
 }

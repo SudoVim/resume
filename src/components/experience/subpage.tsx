@@ -1,5 +1,5 @@
 import React from "react";
-import { HC, HW, Subpage } from "components/utils";
+import { HC, Subpage } from "components/utils";
 import { ExperienceList } from "./list";
 
 export function ExperienceListSubpage() {
@@ -17,9 +17,7 @@ export function ExperienceListSubpage() {
       ]}
     >
       <HC>
-        <HW width="800px">
-          <ExperienceList />
-        </HW>
+        <ExperienceList />
       </HC>
     </Subpage>
   );
