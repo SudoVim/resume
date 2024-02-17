@@ -7,7 +7,7 @@ type Props = {
   children: string;
 };
 
-function EssayWrapper({ children }: { children: React.ReactNode }) {
+function EssayWrapper({ children }: { children?: React.ReactNode }) {
   return (
     <Typography variant="body1" sx={{ fontFamily: "monospace" }}>
       {children}
