@@ -26,12 +26,6 @@
     "test": "vitest watch",
     "format": "prettier --write 'src/**/*.ts' 'src/**/*.tsx'"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -45,9 +39,7 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
-    "@types/jest": "^29.5.12",
     "@types/node": "^20.11.19",
     "@vitejs/plugin-react": "^4.2.1",
     "prettier": "^3.2.5",
