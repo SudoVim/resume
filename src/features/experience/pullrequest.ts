@@ -1,12 +1,9 @@
 const PULLREQUEST_DESCRIPTION = `
-Lead many different development efforts in order to expand the PullRequest
-product line and to ensure both the reliability and scalability of the service
-as it grows and finds market fit.
-
-- ensured that any code that was shipped for the project was of the highest quality
-- developed new products and integrations like the on-premise proxy and Azure DevOps
-- developed and maintained our cloud infrastructure and its code stack
-- refactored much of the internal application code to be more scalable and maintainable
+As a senior engineer at PullRequest, I was truly a full-stack engineer. My
+duties ranged from developing our entire AWS CDK Infrastructure As Code (IaC)
+project, optimizing application performance, scalability, and cost by
+offloading functionality to Golang microservices, maintaining PHP and Python
+APIs, to front end UI work in Typescript and React.
 `;
 
 const PULLREQUEST_ESSAY = `
@@ -77,6 +74,14 @@ export const pullrequest = {
   title: "Senior Software Engineer",
   tenure: "April 2019 - Acquired April 2022",
   description: PULLREQUEST_DESCRIPTION,
-  skills: ["typescript", "golang", "python", "linux", "docker", "aws"],
+  skills: [
+    "typescript",
+    "golang",
+    "python",
+    "django",
+    "linux",
+    "docker",
+    "aws",
+  ],
   essay: PULLREQUEST_ESSAY,
 };
