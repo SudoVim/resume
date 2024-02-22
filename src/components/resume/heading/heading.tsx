@@ -12,8 +12,8 @@ export function Heading() {
         </Typography>
       </Item>
       <Item>
-        <ExternalLink href="mailto:michaelrenken@protonmail.com?subject=Job opportunity">
-          michaelrenken@protonmail.com
+        <ExternalLink href="mailto:michaelarenken@gmail.com?subject=Job opportunity">
+          michaelarenken@gmail.com
         </ExternalLink>
       </Item>
       <Item>
