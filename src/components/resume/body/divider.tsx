@@ -9,7 +9,7 @@ export type Props = {
 
 export function Divider({ title, href }: Props) {
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <MUIDivider textAlign="left" sx={{ pt: 2 }}>
         <Link to={href}>
           <Typography

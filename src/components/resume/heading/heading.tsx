@@ -5,7 +5,7 @@ import { Item } from "./item";
 
 export function Heading() {
   return (
-    <Grid container spacing={1}>
+    <Grid container>
       <Item>
         <Typography variant="h4" fontFamily="monospace">
           Michael Renken

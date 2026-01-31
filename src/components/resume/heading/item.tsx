@@ -5,10 +5,9 @@ export function Item({ children }: { children: React.ReactNode }) {
   const theme = useTheme();
   return (
     <>
-      <Grid item xs={1} />
+      <Grid size={1} />
       <Grid
-        item
-        xs={10}
+        size={10}
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -19,7 +18,7 @@ export function Item({ children }: { children: React.ReactNode }) {
       >
         {children}
       </Grid>
-      <Grid item xs={1} />
+      <Grid size={1} />
     </>
   );
 }

@@ -9,8 +9,7 @@ type Props = {
 export function Item({ children }: Props) {
   return (
     <Grid
-      item
-      xs={12}
+      size={12}
       sx={{
         display: "flex",
         alignItems: "center",

@@ -13,9 +13,9 @@ export function Skills({ skills }: Props) {
   const theme = useTheme();
   const skillsToUse = skills ?? defaultSkills;
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} sx={{ width: "100%" }}>
       {skillsToUse.map((skill) => (
-        <Grid item key={skill.key} xs={4}>
+        <Grid key={skill.key} size={4}>
           <Box
             sx={{
               borderBottom: `1px dashed ${theme.palette.text.secondary}`,

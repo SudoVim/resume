@@ -16,8 +16,7 @@ export function ResultCell({ type }: Props) {
         : COLORS.close;
   return (
     <Grid
-      item
-      xs={6}
+      size={6}
       sx={{
         border: `2px solid ${theme.palette.text.secondary}`,
         borderRadius: "5px",
