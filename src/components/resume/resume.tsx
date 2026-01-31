@@ -7,14 +7,14 @@ export function Resume() {
   return (
     <Grid container spacing={2}>
       {/* Heading should be on a line of its own with some padding on either side */}
-      <Grid item xs={2} />
-      <Grid item xs={8}>
+      <Grid size={2} />
+      <Grid size={8}>
         <Heading />
       </Grid>
-      <Grid item xs={2} />
+      <Grid size={2} />
 
       {/* The body will take up the full width */}
-      <Grid item xs={12}>
+      <Grid size={12}>
         <Body />
       </Grid>
     </Grid>

@@ -19,7 +19,7 @@ export function App() {
           sx={{
             background: theme.palette.background.paper,
             margin: 2,
-            padding: 2,
+            padding: "1em",
             border: `1px solid ${theme.palette.text.secondary}`,
             borderRadius: 2,
             fontFamily: "monospace",

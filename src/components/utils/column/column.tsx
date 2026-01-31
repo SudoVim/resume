@@ -12,7 +12,7 @@ export function Column({ children, spacing }: Props) {
       {children
         ?.filter((child) => Boolean(child))
         .map((child, i) => (
-          <Grid key={i} item xs={12}>
+          <Grid key={i} size={12}>
             {child}
           </Grid>
         ))}

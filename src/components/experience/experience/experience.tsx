@@ -38,7 +38,9 @@ export function Experience({ experienceKey, showSkills }: Props) {
       {responsibilities ? (
         <Responsibilities responsibilities={responsibilities} />
       ) : null}
-      {roles?.map((role, i) => <Role key={i} role={role} />)}
+      {roles?.map((role, i) => (
+        <Role key={i} role={role} />
+      ))}
     </Column>
   );
 }
